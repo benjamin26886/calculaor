@@ -40,16 +40,16 @@ const operate = function(num1,num2,operator){
         return result;
     }
     if(operator == "-"){
-        subtract(num1,num2)
-        return subtract;
+        let result = subtract(num1,num2);
+        return result;
     }
     if(operator == "÷"){
-        divide(num1,num2)
-        return divide;
+        let result = divide(num1,num2);
+        return result;
     }
     if(operator == "*"){
-        multiply(num1,num2)
-        return multiply;
+        let result = multiply(num1,num2)
+        return result;
     }
 }
 
@@ -142,7 +142,8 @@ multiplication.addEventListener("click",function(){
     display_bottom.textContent = display_value; // This updates the display on the browser
     display_value = "" ;
 });
-const divison = document.querySelector(".divison",function(){
+const divison = document.querySelector(".divison");
+divison.addEventListener("click",function(){
     number1 = display_value;
     current_operator = "÷"
     display_value+= "÷";
