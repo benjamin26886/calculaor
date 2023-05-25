@@ -36,8 +36,8 @@ const multiply= function (num1, num2){
 const operate = function(num1,num2,operator){
     let value2 = num2;
     if(operator == "+"){
-        add(num1,num2)
-        return add;
+        let result = add(num1,num2)
+        return result;
     }
     if(operator == "-"){
         subtract(num1,num2)
@@ -115,6 +115,7 @@ zero.addEventListener("click",function(){
     display_bottom.textContent =  display_value;
 });
 
+//Event Listners
 const addition = document.querySelector(".addition");
 addition.addEventListener("click",function(){
     //let value1 = current_value; // store the current value into value 1 
@@ -124,7 +125,30 @@ addition.addEventListener("click",function(){
     display_bottom.textContent = display_value; // This updates the display on the browser
     display_value = "" ; //clear the display value;
     
-})
+});
+const subtraction = document.querySelector(".subtraction");
+subtraction.addEventListener("click",function(){
+    number1 = display_value;
+    current_operator = "-"
+    display_value+= "-";
+    display_bottom.textContent = display_value; // This updates the display on the browser
+    display_value = "" ;
+});
+const multiplication = document.querySelector(".multiplication");
+multiplication.addEventListener("click",function(){
+    number1 = display_value;
+    current_operator = "*"
+    display_value+= "*";
+    display_bottom.textContent = display_value; // This updates the display on the browser
+    display_value = "" ;
+});
+const divison = document.querySelector(".divison",function(){
+    number1 = display_value;
+    current_operator = "÷"
+    display_value+= "÷";
+    display_bottom.textContent = display_value; // This updates the display on the browser
+    display_value = "" ;
+});
 
 //Display
 let display_bottom = document.querySelector(".display-bottom");
@@ -136,12 +160,14 @@ equals.addEventListener("click",function(){
     number2 = display_value;  // here this time number2 will use the display value as its value instead of number1 being used 
     let num1 = parseInt(number1); // here the first value is converted into an integer,before being passed into the operate function
     let num2 = parseInt(number2); // here the second value is converted into an integer,before being passed into the operate function
-    /*
+    
     console.log(num1);
     console.log(num2);
     console.log(current_operator);
-    */
-    operate(num1,num2,current_operator); //This is not complete
+    
+    
+     let result = operate(num1,num2,current_operator); //This is not complete
+     display_bottom.textContent = result;
     
 })
 
