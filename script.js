@@ -123,16 +123,11 @@ addition.addEventListener("click",function(){
     display_value+= "+";
     display_bottom.textContent = display_value; // This updates the display on the browser
     display_value = "" ; //clear the display value;
-
-    //let display_value = ""; // clear display value 
-    //let operator = "+" // create operator symbol
     
-    //current_operator = operator;
-    //console.log(value1);
 })
 
 //Display
-const display_bottom = document.querySelector(".display-bottom");
+let display_bottom = document.querySelector(".display-bottom");
 
 //Evaluate the values
 const equals = document.querySelector(".equals");
@@ -149,6 +144,16 @@ equals.addEventListener("click",function(){
     operate(num1,num2,current_operator); //This is not complete
     
 })
+
+const clear = document.querySelector(".clear");
+clear.addEventListener("click",function(){
+    /** Thsi function clears all the varibales and the display */
+    number1 = "";
+    number2 = "";
+    display_value = "";
+    current_operator = "";
+    display_bottom.textContent = "";
+});
 /*
 Problem
     1. store the first number that is input into the calculator when a user presses an operator,
