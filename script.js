@@ -59,6 +59,7 @@ one.addEventListener("click",function(){
     display_value += "1"; //concatane 
     display_bottom.textContent =  display_value;
     current_value = display_value;
+    
 });
 
 const two = document.querySelector(".two");
